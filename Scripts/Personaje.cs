@@ -7,9 +7,9 @@ public partial class Personaje : CharacterBody2D
 	[Export]
 	public float Speed{get; set;} = 300.0f;
 	[Export]
-	public float gravity { get; set; } = 300f;
+	public float gravity { get; set; } = 200f;
 	[Export]
-	public float jumpStrenght { get; set; } = -200f;
+	public float jumpStrenght { get; set; } = -100f;
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector2 v = Velocity;
@@ -17,7 +17,7 @@ public partial class Personaje : CharacterBody2D
 			v.Y += gravity * (float)delta;
 		
 		var jp = Input.IsActionJustPressed("saltar");
-		if(jp)
+		if(jp && IsOnFloor())
 		{
 			v.Y = jumpStrenght;
 		}

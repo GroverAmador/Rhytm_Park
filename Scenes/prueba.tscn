@@ -10,7 +10,6 @@ position = Vector2(179, 33)
 
 [node name="Personaje" parent="." unique_id=2140643733 instance=ExtResource("2_ym7p0")]
 position = Vector2(144, 10)
-jumpStrenght = -1.0
 
 [node name="Piso2" parent="." unique_id=1003449979 instance=ExtResource("1_nskf2")]
 position = Vector2(312, 34)
