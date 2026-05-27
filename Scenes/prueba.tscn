@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b6iwh1u6ovxt4"]
+
+[ext_resource type="PackedScene" uid="uid://e7rtv41mhkpq" path="res://Scenes/Objects/piso.tscn" id="1_nskf2"]
+[ext_resource type="PackedScene" uid="uid://de3td7xco2jrl" path="res://Scenes/Entitys/personaje.tscn" id="2_ym7p0"]
+
+[node name="Prueba" type="Node2D" unique_id=899143058]
+
+[node name="Piso" parent="." unique_id=345637132 instance=ExtResource("1_nskf2")]
+position = Vector2(179, 33)
+
+[node name="Personaje" parent="." unique_id=2140643733 instance=ExtResource("2_ym7p0")]
+position = Vector2(144, 10)
+jumpStrenght = -1.0
+
+[node name="Piso2" parent="." unique_id=1003449979 instance=ExtResource("1_nskf2")]
+position = Vector2(312, 34)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=701671324]
+position = Vector2(229, 6)
+scale = Vector2(1.1029727, 1.5607281)
+zoom = Vector2(3, 3)
