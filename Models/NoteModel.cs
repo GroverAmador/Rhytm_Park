@@ -1,15 +1,12 @@
-using Godot;
-using System;
-
-public partial class NoteModel : Node
+namespace RhythmSyncLocal.Models
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
+	public enum NoteResult { None, Perfect, Good, Miss }
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	public class NoteModel
 	{
+		public double BeatTime { get; set; }
+		public bool IsHit { get; set; }
+		public NoteResult Result { get; set; } = NoteResult.None;
+		public int AssignedPlayerId { get; set; }
 	}
 }

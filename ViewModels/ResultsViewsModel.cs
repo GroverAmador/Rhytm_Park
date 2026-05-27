@@ -1,15 +1,27 @@
 using Godot;
-using System;
 
-public partial class ResultsViewsModel : Node
+namespace RhythmSyncLocal.ViewModels
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
+	public partial class ResultsViewModel : Node
 	{
-	}
+		private Label _player1ScoreLabel;
+		private Label _player2ScoreLabel;
+		private Label _resultMessageLabel;
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
+		public override void _Ready()
+		{
+			_player1ScoreLabel  = GetNode<Label>("UI/Player1Score");
+			_player2ScoreLabel  = GetNode<Label>("UI/Player2Score");
+			_resultMessageLabel = GetNode<Label>("UI/ResultMessage");
+		}
+
+		public void ShowResults(int p1Score, int p2Score)
+		{
+			_player1ScoreLabel.Text  = $"Jugador 1: {p1Score}";
+			_player2ScoreLabel.Text  = $"Jugador 2: {p2Score}";
+			_resultMessageLabel.Text = p1Score >= p2Score
+				? "¡Jugador 1 gana!"
+				: "¡Jugador 2 gana!";
+		}
 	}
 }
