@@ -24,11 +24,11 @@ public partial class Personaje : CharacterBody2D
 		var direction = Input.GetAxis("izquierda", "derecha");
 		if(direction != 0)
 		{
-            v.X = Speed * direction;
-        }
+			v.X = Speed * direction;
+		}
 		else
 			v.X = 0;
 		Velocity = v;
-        MoveAndSlide();
-    }
+		MoveAndSlide();
+	}
 }

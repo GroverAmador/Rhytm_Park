@@ -6,7 +6,7 @@
 [node name="Prueba" type="Node2D" unique_id=899143058]
 
 [node name="Piso" parent="." unique_id=345637132 instance=ExtResource("1_nskf2")]
-position = Vector2(179, 33)
+position = Vector2(181, 34)
 
 [node name="Personaje" parent="." unique_id=2140643733 instance=ExtResource("2_ym7p0")]
 position = Vector2(144, 10)
