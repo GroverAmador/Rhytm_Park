@@ -125,3 +125,4 @@ shape = SubResource("RectangleShape2D_vgx5c")
 replication_config = SubResource("SceneReplicationConfig_801yk")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1969294509]
+enabled = false

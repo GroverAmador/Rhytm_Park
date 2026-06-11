@@ -4,13 +4,17 @@ const SPEED = 300.0
 var FacingRight = true
 var current_animation: AnimatedSprite2D
 @onready var animator = $AnimatedSprite2D
+@onready var camera = $Camera2D
 
 func _enter_tree() -> void:
 	set_multiplayer_authority(name.to_int())
 	
 func _ready() -> void:
 	if !is_multiplayer_authority():
-		return
+		camera.enabled = true
+		camera.make_current()
+	else:
+		camera.enabled = false
 	current_animation = animator
 	
 func _physics_process(delta: float) -> void:
