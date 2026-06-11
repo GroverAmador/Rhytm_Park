@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://lwdan7ijqbu6"
+path="res://.godot/imported/Death by Glamour.mp3-33f315729eeaf756fb9b534682eae82d.mp3str"
+
+[deps]
+
+source_file="res://Resources/Music/Death by Glamour.mp3"
+dest_files=["res://.godot/imported/Death by Glamour.mp3-33f315729eeaf756fb9b534682eae82d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

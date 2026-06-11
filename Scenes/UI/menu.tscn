@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cr48403vlv1di"]
+
+[ext_resource type="Script" uid="uid://bcut4ffvrtqra" path="res://Scripts/Game/menu.gd" id="1_nhmg3"]
+[ext_resource type="Script" uid="uid://c8tp8n8l3uqm5" path="res://Scripts/Game/Connection/server_manager.gd" id="2_wuk0b"]
+[ext_resource type="PackedScene" uid="uid://d3clld080s4jk" path="res://Scenes/Game/lobby.tscn" id="3_t1b1y"]
+[ext_resource type="PackedScene" uid="uid://ddndj5pi3flv6" path="res://Scenes/Character/player.tscn" id="3_tjcm1"]
+
+[node name="Menu" type="Node2D" unique_id=2033343429]
+script = ExtResource("1_nhmg3")
+
+[node name="Ip" type="CanvasLayer" parent="." unique_id=1924095822]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=543805906]
+
+[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer" unique_id=829339413]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -33.0
+offset_right = 30.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/BoxContainer" unique_id=1198237227]
+layout_mode = 2
+
+[node name="IpLabel" type="Label" parent="CanvasLayer/BoxContainer/VBoxContainer" unique_id=1980947056]
+layout_mode = 2
+text = "Ip"
+horizontal_alignment = 1
+
+[node name="Join" type="Button" parent="CanvasLayer/BoxContainer/VBoxContainer" unique_id=635410146]
+layout_mode = 2
+text = "Join"
+
+[node name="Create" type="Button" parent="CanvasLayer/BoxContainer/VBoxContainer" unique_id=1671775947]
+layout_mode = 2
+text = "Create"
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer/BoxContainer/VBoxContainer" unique_id=513411492]
+layout_mode = 2
+
+[node name="ServerManager" type="Node" parent="." unique_id=1872218123 node_paths=PackedStringArray("main_scene")]
+script = ExtResource("2_wuk0b")
+Player = ExtResource("3_tjcm1")
+main_scene = NodePath("../Lobby")
+addres = "192.168.100.123"
+port = "3303"
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="ServerManager" unique_id=750994165]
+_spawnable_scenes = PackedStringArray("uid://ddndj5pi3flv6")
+spawn_path = NodePath("../../Lobby")
+spawn_limit = 3
+
+[node name="Lobby" parent="." unique_id=417031193 instance=ExtResource("3_t1b1y")]
+position = Vector2(-12, -8)
+
+[connection signal="pressed" from="CanvasLayer/BoxContainer/VBoxContainer/Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="CanvasLayer/BoxContainer/VBoxContainer/Create" to="." method="_on_create_pressed"]

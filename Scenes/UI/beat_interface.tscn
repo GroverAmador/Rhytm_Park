@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dlip5ksytq8h8"]
+
+[ext_resource type="Script" uid="uid://62kgblioxkgg" path="res://Scripts/UI/BeatInterface/Controller.gd" id="1_7t7jg"]
+[ext_resource type="Texture2D" uid="uid://ddla6wr0ls3fc" path="res://Resources/Sprites/UI/BeatInterface/Note1.png" id="2_4pyxk"]
+[ext_resource type="Script" uid="uid://ctb72sspgmym7" path="res://Scripts/UI/BeatInterface/audio_stream_player.gd" id="3_0db73"]
+[ext_resource type="AudioStream" uid="uid://x06f0djh0jsb" path="res://Resources/Music/MEGALOVANIA.mp3" id="3_4pyxk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_731y0"]
+
+[node name="BeatInterface" type="CanvasLayer" unique_id=1428855176]
+script = ExtResource("1_7t7jg")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1717907361]
+offset_left = -17.0
+offset_top = 279.0
+offset_right = 23.0
+offset_bottom = 319.0
+scale = Vector2(17.024776, 2.5067213)
+color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1482072723]
+stream = ExtResource("3_4pyxk")
+script = ExtResource("3_0db73")
+
+[node name="Spawn" type="Label" parent="." unique_id=339293952]
+offset_left = 594.99994
+offset_top = 329.0
+offset_right = 634.99994
+offset_bottom = 352.0
+scale = Vector2(1.171077, 0.62798023)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1780479648]
+top_level = true
+position = Vector2(37, 327)
+scale = Vector2(3, 3)
+texture = ExtResource("2_4pyxk")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=676323887]
+scale = Vector2(1.6114731, 2.0485125)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=1472715080]
+position = Vector2(0.20685008, 0)
+scale = Vector2(-0.17757127, 0.14054026)
+shape = SubResource("RectangleShape2D_731y0")
+
+[connection signal="beat" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_beat"]
+[connection signal="area_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Sprite2D/Area2D" to="." method="_on_area_2d_area_exited"]

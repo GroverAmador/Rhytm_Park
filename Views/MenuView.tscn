@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://bphe1yeu2spij"]
-
-[node name="MenuView" type="Control" unique_id=554816532]
-layout_mode = 3
-anchors_preset = 0

@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://bo47ib2dlsim"]
-
-[node name="ResultsView" type="Control" unique_id=1312947626]
-layout_mode = 3
-anchors_preset = 0

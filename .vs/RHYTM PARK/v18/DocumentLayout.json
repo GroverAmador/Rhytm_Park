@@ -5,6 +5,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{1438BAC2-F71C-4ED5-8215-8404196C1BDB}|Rhytm Park.csproj|d:\\grover reynaldo\\godot-projects\\rhytm-park\\scripts\\personaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1438BAC2-F71C-4ED5-8215-8404196C1BDB}|Rhytm Park.csproj|solutionrelative:scripts\\personaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1438BAC2-F71C-4ED5-8215-8404196C1BDB}|Rhytm Park.csproj|d:\\grover reynaldo\\godot-projects\\rhytm-park\\models\\gamesessionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1438BAC2-F71C-4ED5-8215-8404196C1BDB}|Rhytm Park.csproj|solutionrelative:models\\gamesessionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1438BAC2-F71C-4ED5-8215-8404196C1BDB}|Rhytm Park.csproj|d:\\grover reynaldo\\godot-projects\\rhytm-park\\engine\\beatengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1438BAC2-F71C-4ED5-8215-8404196C1BDB}|Rhytm Park.csproj|solutionrelative:engine\\beatengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +22,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BeatEngine.cs",
+              "DocumentMoniker": "D:\\grover reynaldo\\godot-projects\\rhytm-park\\Engine\\BeatEngine.cs",
+              "RelativeDocumentMoniker": "Engine\\BeatEngine.cs",
+              "ToolTip": "D:\\grover reynaldo\\godot-projects\\rhytm-park\\Engine\\BeatEngine.cs",
+              "RelativeToolTip": "Engine\\BeatEngine.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-29T04:41:01.237Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GameSessionModel.cs",
+              "DocumentMoniker": "D:\\grover reynaldo\\godot-projects\\rhytm-park\\Models\\GameSessionModel.cs",
+              "RelativeDocumentMoniker": "Models\\GameSessionModel.cs",
+              "ToolTip": "D:\\grover reynaldo\\godot-projects\\rhytm-park\\Models\\GameSessionModel.cs",
+              "RelativeToolTip": "Models\\GameSessionModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-29T04:36:51.723Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +58,7 @@
               "RelativeDocumentMoniker": "Scripts\\Personaje.cs",
               "ToolTip": "D:\\grover reynaldo\\godot-projects\\rhytm-park\\Scripts\\Personaje.cs",
               "RelativeToolTip": "Scripts\\Personaje.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAA3wBwAAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-27T07:00:10.402Z",
               "EditorCaption": ""
