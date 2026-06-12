@@ -8,8 +8,6 @@
 [node name="Menu" type="Node2D" unique_id=2033343429]
 script = ExtResource("1_nhmg3")
 
-[node name="Ip" type="CanvasLayer" parent="." unique_id=1924095822]
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=543805906]
 
 [node name="BoxContainer" type="BoxContainer" parent="CanvasLayer" unique_id=829339413]
@@ -48,8 +46,6 @@ layout_mode = 2
 script = ExtResource("2_wuk0b")
 Player = ExtResource("3_tjcm1")
 main_scene = NodePath("../Lobby")
-addres = "192.168.100.123"
-port = "3303"
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="ServerManager" unique_id=750994165]
 _spawnable_scenes = PackedStringArray("uid://ddndj5pi3flv6")

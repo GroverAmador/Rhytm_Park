@@ -10,10 +10,11 @@ var btny = 0
 @onready var textures = [texture1, texture2, texture3]
 
 func _physics_process(delta: float) -> void:
-	if position.x>=btnx:
-		position.x += speed
+	
+	if global_position.x>0:
+		global_position.x -= speed
 	else:
-		if position.x<btnx+200:
+		if global_position.x<0:
 			queue_free()
 
 func _ready() -> void:
@@ -21,7 +22,7 @@ func _ready() -> void:
 	texture = textures[txtr]
 
 func initialize(spawnx, spawny,targetx, targety):
-	speed = targetx - spawnx/15.0
+	speed = (spawnx-targetx)/80.0
 	position = Vector2(spawnx, spawny)
 	btnx = targetx
 	btny = targety

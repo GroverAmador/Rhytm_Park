@@ -11,10 +11,10 @@
 script = ExtResource("1_7t7jg")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1717907361]
-offset_left = -17.0
-offset_top = 279.0
-offset_right = 23.0
-offset_bottom = 319.0
+offset_left = -21.0
+offset_top = 182.0
+offset_right = 19.0
+offset_bottom = 222.0
 scale = Vector2(17.024776, 2.5067213)
 color = Color(0, 0, 0, 1)
 
@@ -23,20 +23,21 @@ stream = ExtResource("3_4pyxk")
 script = ExtResource("3_0db73")
 
 [node name="Spawn" type="Label" parent="." unique_id=339293952]
-offset_left = 594.99994
-offset_top = 329.0
-offset_right = 634.99994
-offset_bottom = 352.0
+offset_left = 633.0
+offset_top = 232.0
+offset_right = 673.0
+offset_bottom = 255.0
 scale = Vector2(1.171077, 0.62798023)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1780479648]
 top_level = true
-position = Vector2(37, 327)
+position = Vector2(33, 235)
 scale = Vector2(3, 3)
 texture = ExtResource("2_4pyxk")
 
 [node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=676323887]
-scale = Vector2(1.6114731, 2.0485125)
+position = Vector2(-0.33333337, -0.33333334)
+scale = Vector2(3.195756, 3.6695845)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=1472715080]
 position = Vector2(0.20685008, 0)

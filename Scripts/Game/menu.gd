@@ -15,7 +15,6 @@ func _on_join_pressed() -> void:
 	var ip_a_conectar = line_edit.text.strip_edges()
 	
 	if ip_a_conectar == "":
-		print("Campo de IP vacío, intentando con 127.0.0.1")
 		ip_a_conectar = "127.0.0.1"
 	
 	print("Conectando a: ", ip_a_conectar)

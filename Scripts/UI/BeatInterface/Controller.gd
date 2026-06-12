@@ -10,6 +10,7 @@ var pressed_button=preload("res://Resources/Sprites/UI/BeatInterface/Note2.png")
 
 
 func _ready() -> void:
+	await get_tree().create_timer(1).timeout
 	$AudioStreamPlayer.play()
 
 
@@ -35,7 +36,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 func _on_audio_stream_player_beat() -> void:
 	instance = note.instantiate()
-	instance.initialize(spawn.position.x, spawn.position.y, button.position.x, button.position.y)
+	instance.initialize(spawn.global_position.x, spawn.global_position.y, button.global_position.x, button.global_position.y)
 	add_child(instance)
 	move_child(instance, 1)
 
