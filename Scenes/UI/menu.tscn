@@ -4,11 +4,76 @@
 [ext_resource type="Script" uid="uid://c8tp8n8l3uqm5" path="res://Scripts/Game/Connection/server_manager.gd" id="2_wuk0b"]
 [ext_resource type="PackedScene" uid="uid://d3clld080s4jk" path="res://Scenes/Game/lobby.tscn" id="3_t1b1y"]
 [ext_resource type="PackedScene" uid="uid://ddndj5pi3flv6" path="res://Scenes/Character/player.tscn" id="3_tjcm1"]
+[ext_resource type="Script" uid="uid://da1hnftcw1wox" path="res://Scenes/UI/main_menu.gd" id="5_rb4ur"]
+[ext_resource type="Texture2D" uid="uid://cnsr3k35c1spg" path="res://thumb-1920-1139471.jpg" id="5_ugp1d"]
+[ext_resource type="FontFile" uid="uid://cha5xe3qmsdug" path="res://GrapeSoda.ttf" id="6_rb4ur"]
+[ext_resource type="Texture2D" uid="uid://6gh6rpcdrfnh" path="res://Rengranaje.png" id="8_ttkkf"]
+[ext_resource type="Texture2D" uid="uid://dwg0ypifye4hm" path="res://ReengranajeHover.png" id="9_dxfgg"]
+[ext_resource type="AudioStream" uid="uid://cy8f75jftbl00" path="res://You Can Always Come Home.mp3" id="10_dxfgg"]
+[ext_resource type="Script" uid="uid://ny60di5sskri" path="res://Scenes/UI/audio_control.gd" id="11_q0i46"]
+[ext_resource type="Script" uid="uid://db23sa678gobl" path="res://Scenes/UI/fullscreen.gd" id="12_fied4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4twqa"]
+texture = ExtResource("5_ugp1d")
+modulate_color = Color(0.41981313, 0.41981313, 0.4198131, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ttkkf"]
+bg_color = Color(0.76174164, 0.99999994, 0.75161445, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dxfgg"]
+bg_color = Color(8.95232e-06, 0.89089936, 0.17138511, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q0i46"]
+bg_color = Color(1.2754649e-05, 0.6756879, 0.11987954, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ugp1d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fied4"]
+bg_color = Color(0.9787367, 0.86014813, 0.9774596, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5hva"]
+bg_color = Color(0.9697868, 0.76502806, 0.965439, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c0ox7"]
+bg_color = Color(0.9434003, 0.5340375, 0.9452433, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_q0i46"]
+color = Color(0.8819366, 0.8819366, 0.88193655, 1)
+thickness = 5
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_fied4"]
+color = Color(0, 0.56078434, 0, 1)
+thickness = 5
 
 [node name="Menu" type="Node2D" unique_id=2033343429]
 script = ExtResource("1_nhmg3")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=543805906]
+visible = false
 
 [node name="BoxContainer" type="BoxContainer" parent="CanvasLayer" unique_id=829339413]
 anchors_preset = 8
@@ -25,6 +90,7 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/BoxContainer" unique_id=1198237227]
 layout_mode = 2
+theme_override_constants/separation = 11
 
 [node name="IpLabel" type="Label" parent="CanvasLayer/BoxContainer/VBoxContainer" unique_id=1980947056]
 layout_mode = 2
@@ -53,7 +119,223 @@ spawn_path = NodePath("../../Lobby")
 spawn_limit = 3
 
 [node name="Lobby" parent="." unique_id=417031193 instance=ExtResource("3_t1b1y")]
-position = Vector2(-12, -8)
+position = Vector2(-1, -1)
+
+[node name="main_menu" type="Control" parent="." unique_id=1510229823]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 625.0
+offset_bottom = 352.0
+script = ExtResource("5_rb4ur")
+
+[node name="bakcground" type="Panel" parent="main_menu" unique_id=197967474]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_4twqa")
+
+[node name="MainButtons" type="VBoxContainer" parent="main_menu" unique_id=65031204]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.5
+offset_top = -58.5
+offset_right = 85.5
+offset_bottom = 58.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="host" type="Button" parent="main_menu/MainButtons" unique_id=1221833334]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.84
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.83033526, 0.83033514, 0.83033514, 1)
+theme_override_colors/font_pressed_color = Color(0.83510804, 0.9112424, 0.8415271, 1)
+theme_override_colors/font_hover_color = Color(0.97487825, 0.99251515, 0.97844034, 1)
+theme_override_fonts/font = ExtResource("6_rb4ur")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ttkkf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dxfgg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q0i46")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ugp1d")
+text = "Host Game"
+
+[node name="join" type="Button" parent="main_menu/MainButtons" unique_id=740313924]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.84
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.83033526, 0.83033514, 0.83033514, 1)
+theme_override_colors/font_pressed_color = Color(0.83510804, 0.9112424, 0.8415271, 1)
+theme_override_colors/font_hover_color = Color(0.97487825, 0.99251515, 0.97844034, 1)
+theme_override_fonts/font = ExtResource("6_rb4ur")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ttkkf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dxfgg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q0i46")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ugp1d")
+text = "Join Game"
+
+[node name="exit" type="Button" parent="main_menu/MainButtons" unique_id=224999503]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.84
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.83033526, 0.83033514, 0.83033514, 1)
+theme_override_colors/font_pressed_color = Color(0.83510804, 0.9112424, 0.8415271, 1)
+theme_override_colors/font_hover_color = Color(0.97487825, 0.99251515, 0.97844034, 1)
+theme_override_fonts/font = ExtResource("6_rb4ur")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ttkkf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dxfgg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q0i46")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ugp1d")
+text = "Exit"
+
+[node name="title" type="Label" parent="main_menu" unique_id=1785595725]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -196.5
+offset_top = -180.0
+offset_right = 196.5
+offset_bottom = -84.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("6_rb4ur")
+theme_override_font_sizes/font_size = 70
+text = "Rhytm Park"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="settings" type="TextureButton" parent="main_menu" unique_id=1404787878]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 12.0
+offset_right = 95.0
+offset_bottom = 94.0
+texture_normal = ExtResource("8_ttkkf")
+texture_pressed = ExtResource("9_dxfgg")
+
+[node name="settings2" type="Label" parent="main_menu" unique_id=127196924]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 43.0
+offset_right = 78.0
+offset_bottom = 66.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("6_rb4ur")
+theme_override_font_sizes/font_size = 16
+text = "Settings"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="main_menu" unique_id=243807407]
+stream = ExtResource("10_dxfgg")
+autoplay = true
+bus = &"Music"
+
+[node name="panel_settings" type="Panel" parent="main_menu" unique_id=2017885776]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = -91.0
+offset_right = 143.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="main_menu/panel_settings" unique_id=610146993]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -37.5
+offset_top = 2.0
+offset_right = 40.5
+offset_bottom = 26.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("6_rb4ur")
+theme_override_font_sizes/font_size = 24
+text = "Options"
+
+[node name="back" type="Button" parent="main_menu/panel_settings" unique_id=1450318620]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = 50.0
+offset_right = 49.0
+offset_bottom = 81.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.84
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.83033526, 0.83033514, 0.83033514, 1)
+theme_override_colors/font_pressed_color = Color(0.83510804, 0.9112424, 0.8415271, 1)
+theme_override_colors/font_hover_color = Color(0.97487825, 0.99251515, 0.97844034, 1)
+theme_override_fonts/font = ExtResource("6_rb4ur")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_fied4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s5hva")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c0ox7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ugp1d")
+text = "back"
+
+[node name="audio_control" type="HSlider" parent="main_menu/panel_settings" unique_id=682749994]
+layout_mode = 0
+offset_left = 47.5
+offset_top = 13.0
+offset_right = 237.0
+offset_bottom = 76.0
+theme_override_styles/slider = SubResource("StyleBoxLine_q0i46")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_fied4")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_fied4")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("11_q0i46")
+
+[node name="Fullscreen" type="CheckButton" parent="main_menu/panel_settings" unique_id=1203507632]
+layout_mode = 0
+offset_left = 47.5
+offset_top = 68.0
+offset_right = 239.5
+offset_bottom = 99.0
+theme_override_fonts/font = ExtResource("6_rb4ur")
+theme_override_font_sizes/font_size = 22
+text = "Fullscren
+"
+script = ExtResource("12_fied4")
 
 [connection signal="pressed" from="CanvasLayer/BoxContainer/VBoxContainer/Join" to="." method="_on_join_pressed"]
 [connection signal="pressed" from="CanvasLayer/BoxContainer/VBoxContainer/Create" to="." method="_on_create_pressed"]
+[connection signal="pressed" from="main_menu/MainButtons/host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="main_menu/MainButtons/join" to="main_menu" method="_on_join_2_pressed"]
+[connection signal="pressed" from="main_menu/MainButtons/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="main_menu/MainButtons/exit" to="main_menu" method="_on_exit_pressed"]
+[connection signal="pressed" from="main_menu/settings" to="main_menu" method="_on_settings_pressed"]
+[connection signal="pressed" from="main_menu/panel_settings/back" to="main_menu" method="_on_back_pressed"]
+[connection signal="value_changed" from="main_menu/panel_settings/audio_control" to="main_menu/panel_settings/audio_control" method="_on_value_changed"]
+[connection signal="toggled" from="main_menu/panel_settings/Fullscreen" to="main_menu/panel_settings/Fullscreen" method="_on_toggled"]

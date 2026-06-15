@@ -15,6 +15,10 @@ run/main_scene="uid://dlip5ksytq8h8"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://ypfw8s0fjcts"
+
 [autoload]
 
 Global="*uid://c3lg45bbfrgmi"
@@ -23,6 +27,7 @@ Global="*uid://c3lg45bbfrgmi"
 
 window/size/viewport_width=640
 window/size/viewport_height=272
+window/size/mode=3
 window/size/window_width_override=1440
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
