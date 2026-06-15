@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cr48403vlv1di"]
+
+[ext_resource type="Script" uid="uid://bcut4ffvrtqra" path="res://Scripts/Game/menu.gd" id="1_ollii"]
+[ext_resource type="Script" uid="uid://c8tp8n8l3uqm5" path="res://Scripts/Game/Connection/server_manager.gd" id="2_ialnu"]
+[ext_resource type="PackedScene" uid="uid://ddndj5pi3flv6" path="res://Scenes/Character/player.tscn" id="3_1so4l"]
+[ext_resource type="PackedScene" uid="uid://d3clld080s4jk" path="res://Scenes/Game/lobby.tscn" id="4_ual16"]
+[ext_resource type="PackedScene" uid="uid://ctjom3qqp17fu" path="res://Scenes/UI/main_menu.tscn" id="5_ljmu1"]
+
+[node name="Main" type="Node2D" unique_id=2033343429]
+script = ExtResource("1_ollii")
+
+[node name="ServerManager" type="Node" parent="." unique_id=1872218123 node_paths=PackedStringArray("main_scene")]
+script = ExtResource("2_ialnu")
+Player = ExtResource("3_1so4l")
+main_scene = NodePath("../Room/Lobby")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="ServerManager" unique_id=750994165]
+_spawnable_scenes = PackedStringArray("uid://ddndj5pi3flv6")
+spawn_path = NodePath("../../Room")
+spawn_limit = 3
+
+[node name="Room" type="Node" parent="." unique_id=1775311908]
+
+[node name="Lobby" parent="Room" unique_id=417031193 instance=ExtResource("4_ual16")]
+position = Vector2(-1, -1)
+
+[node name="Interface" type="Node" parent="Room" unique_id=1934840767]
+
+[node name="main_menu" parent="Room/Interface" unique_id=1869653177 instance=ExtResource("5_ljmu1")]
