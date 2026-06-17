@@ -143,15 +143,16 @@ properties/2/spawn = true
 properties/2/replication_mode = 1
 
 [node name="Player" type="CharacterBody2D" unique_id=962021801]
-position = Vector2(320, 137)
 script = ExtResource("1_ojo44")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=166209832]
+position = Vector2(6, -22)
 sprite_frames = SubResource("SpriteFrames_ggc2y")
 animation = &"dance_move3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=804641423]
-position = Vector2(-5, 8)
+position = Vector2(1.9999995, -15.999998)
+scale = Vector2(1.5419608, 1.712645)
 shape = SubResource("RectangleShape2D_vgx5c")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=784937014]

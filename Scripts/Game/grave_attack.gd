@@ -3,11 +3,12 @@ extends Node2D
 @onready var animation = $AnimatedSprite2D
 var makes_damage = false
 var body_is_in = false
+var damaged = false
 func _ready() -> void:
 	animation.play("spawn")
 	await animation.animation_finished
 	animation.play("waiting")
-	await get_tree().create_timer(4).timeout
+	await get_tree().create_timer(1).timeout
 	makes_damage = true
 	animation.play("attack")
 	await animation.animation_finished
@@ -15,8 +16,9 @@ func _ready() -> void:
 	queue_free()
 
 func _process(delta: float) -> void:
-	if(body_is_in and makes_damage):
+	if(body_is_in and makes_damage and !damaged):
 		Global.damage_received.emit()
+		damaged = true
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:

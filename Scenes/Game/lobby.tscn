@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://do1rucmbv0urc" path="res://Resources/Sprites/Gameplay/TileSetPark2.png" id="2_ac6qe"]
 [ext_resource type="Texture2D" uid="uid://cdscv7m8dxmnj" path="res://Resources/Sprites/Gameplay/TileSetPark3.png" id="3_pnrje"]
 [ext_resource type="Texture2D" uid="uid://0khim08sm8o7" path="res://Resources/Sprites/Gameplay/TileSetPark_Corners.png" id="4_sm8p1"]
+[ext_resource type="AudioStream" uid="uid://c6wghouac4gn4" path="res://Resources/Music/Start Menu.mp3" id="6_sm8p1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c1fjn"]
 texture = ExtResource("1_kxsef")
@@ -351,5 +352,9 @@ scale = Vector2(2.508115, 1.4999282)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1437191498]
 shape = SubResource("RectangleShape2D_ac6qe")
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="." unique_id=412398305]
+stream = ExtResource("6_sm8p1")
+parameters/looping = true
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

@@ -3,9 +3,11 @@
 [ext_resource type="Script" uid="uid://cyigdwpn8l2i4" path="res://Scripts/UI/loading.gd" id="1_rd4c8"]
 [ext_resource type="FontFile" uid="uid://cha5xe3qmsdug" path="res://Resources/Fonts/GrapeSoda.ttf" id="2_8e1fi"]
 [ext_resource type="Texture2D" uid="uid://7f2hngmjgahp" path="res://Resources/Sprites/UI/LoadingBar.png" id="3_axk4b"]
+[ext_resource type="Texture2D" uid="uid://nrqcgth086tv" path="res://Resources/Sprites/Character/grizzly.png" id="4_8e1fi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_louq4"]
 font = ExtResource("2_8e1fi")
+font_size = 20
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2nwcs"]
 atlas = ExtResource("3_axk4b")
@@ -122,9 +124,103 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cncoc")
 }],
+"loop": false,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="Animation" id="Animation_axk4b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(316, 203)]
+}
+
+[sub_resource type="Animation" id="Animation_louq4"]
+resource_name = "bear"
+length = 3.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(320, 200), Vector2(630, 204)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2nwcs"]
+_data = {
+&"RESET": SubResource("Animation_axk4b"),
+&"bear": SubResource("Animation_louq4")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vibhu"]
+atlas = ExtResource("4_8e1fi")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlr0s"]
+atlas = ExtResource("4_8e1fi")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54pqk"]
+atlas = ExtResource("4_8e1fi")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y84ks"]
+atlas = ExtResource("4_8e1fi")
+region = Rect2(256, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2yyj"]
+atlas = ExtResource("4_8e1fi")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4seu"]
+atlas = ExtResource("4_8e1fi")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yydts"]
+atlas = ExtResource("4_8e1fi")
+region = Rect2(128, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dy1o4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vibhu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mlr0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54pqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y84ks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2yyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4seu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yydts")
+}],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 12.0
 }]
 
 [node name="Loading" type="Control" unique_id=933219228]
@@ -138,26 +234,52 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rd4c8")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=683634955]
-layout_mode = 0
-offset_left = -488.0
-offset_top = -255.0
-offset_right = -448.0
-offset_bottom = -215.0
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=264477442]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=683634955]
+offset_left = -8.0
+offset_top = -7.0
+offset_right = 32.0
+offset_bottom = 33.0
 scale = Vector2(24.843395, 12.666766)
 color = Color(0, 0, 0, 1)
 
-[node name="BoxContainer" type="BoxContainer" parent="." unique_id=12192331]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer" unique_id=1834944602]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.5
+offset_top = -50.0
+offset_right = 24.5
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Label" type="Label" parent="BoxContainer" unique_id=1916436488]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/BoxContainer" unique_id=1569598229]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/BoxContainer/VBoxContainer" unique_id=1916436488]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 text = "Loading"
 label_settings = SubResource("LabelSettings_louq4")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BoxContainer" unique_id=1711855352]
-position = Vector2(22, 37)
-scale = Vector2(3.4540677, 3.4540677)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/BoxContainer/VBoxContainer" unique_id=1711855352]
+position = Vector2(25.5, 25)
+scale = Vector2(7.0806575, 7.0806575)
 sprite_frames = SubResource("SpriteFrames_vibhu")
+frame = 15
+frame_progress = 1.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer" unique_id=523353766]
+libraries/ = SubResource("AnimationLibrary_2nwcs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1438887921]
+position = Vector2(316, 203)
+sprite_frames = SubResource("SpriteFrames_dy1o4")
+frame_progress = 0.31042916

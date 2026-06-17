@@ -2,7 +2,11 @@
 
 [ext_resource type="Script" uid="uid://d3epygy2j8vnh" path="res://Scripts/UI/level_selector.gd" id="1_7lvs1"]
 [ext_resource type="Texture2D" uid="uid://rwnowhgyn0y2" path="res://Resources/Sprites/UI/Level1Button1.png" id="2_3xg25"]
+[ext_resource type="Theme" uid="uid://jt10bmb6oedo" path="res://Resources/Themes/ParkTheme.tres" id="2_hflck"]
 [ext_resource type="Texture2D" uid="uid://dmoj4ykklxwpx" path="res://Resources/Sprites/UI/Level1Button2.png" id="3_q1n8q"]
+[ext_resource type="Texture2D" uid="uid://pssykx233k1g" path="res://Resources/Sprites/UI/CloseButton1.png" id="5_042vi"]
+[ext_resource type="Texture2D" uid="uid://su48ijtj7vks" path="res://Resources/Sprites/UI/CloseButton2.png" id="6_55sgc"]
+[ext_resource type="Texture2D" uid="uid://blolop82i17l2" path="res://Resources/Sprites/UI/CloseButton3.png" id="7_di608"]
 
 [node name="LevelSelector" type="Control" unique_id=2055450028]
 layout_mode = 3
@@ -15,32 +19,57 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7lvs1")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1066808022]
-layout_mode = 0
-offset_left = -494.99994
-offset_top = -260.0
-offset_right = -454.99994
-offset_bottom = -220.0
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1037596923]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1066808022]
+offset_left = -14.999939
+offset_top = -12.0
+offset_right = 25.000061
+offset_bottom = 28.0
 scale = Vector2(24.961693, 12.960876)
 color = Color(0, 0, 0, 0.32156864)
 
-[node name="Panel" type="Panel" parent="." unique_id=1787522110]
-layout_mode = 0
-offset_left = -206.99998
-offset_top = -101.0
-offset_right = -166.99998
-offset_bottom = -61.0
-scale = Vector2(10.301422, 6.2634525)
+[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer" unique_id=734483381]
+custom_minimum_size = Vector2(700, 400)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
 
-[node name="Level1" type="TextureButton" parent="Panel" unique_id=1087788572]
+[node name="Panel" type="Panel" parent="CanvasLayer/BoxContainer" unique_id=1787522110]
+custom_minimum_size = Vector2(700, 300)
+layout_mode = 2
+theme = ExtResource("2_hflck")
+
+[node name="Level1" type="TextureButton" parent="CanvasLayer/BoxContainer/Panel" unique_id=1087788572]
 layout_mode = 0
-offset_left = 3.1116989
-offset_top = 8.779552
-offset_right = 35.1117
-offset_bottom = 40.779552
-scale = Vector2(0.37855104, 0.5410802)
+offset_left = 307.0
+offset_top = 140.0
+offset_right = 339.0
+offset_bottom = 172.0
+scale = Vector2(3.2087703, 3.673798)
 texture_normal = ExtResource("2_3xg25")
 texture_pressed = ExtResource("3_q1n8q")
 stretch_mode = 3
 
-[connection signal="pressed" from="Panel/Level1" to="." method="_on_level_1_pressed"]
+[node name="Close" type="TextureButton" parent="CanvasLayer/BoxContainer/Panel" unique_id=1687543201]
+layout_mode = 0
+offset_left = 605.99994
+offset_top = 5.0
+offset_right = 645.99994
+offset_bottom = 45.0
+scale = Vector2(3.3281674, 3.3281674)
+texture_normal = ExtResource("5_042vi")
+texture_pressed = ExtResource("6_55sgc")
+texture_hover = ExtResource("7_di608")
+
+[connection signal="pressed" from="CanvasLayer/BoxContainer/Panel/Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/BoxContainer/Panel/Close" to="." method="_on_close_pressed"]

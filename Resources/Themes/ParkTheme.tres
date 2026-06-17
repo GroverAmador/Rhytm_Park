@@ -1,0 +1,27 @@
+[gd_resource type="Theme" format=3 uid="uid://jt10bmb6oedo"]
+
+[ext_resource type="FontFile" uid="uid://cha5xe3qmsdug" path="res://Resources/Fonts/GrapeSoda.ttf" id="1_lnclo"]
+[ext_resource type="Texture2D" uid="uid://cgfrpaqy2s4ej" path="res://Resources/Sprites/UI/Button3.png" id="2_ftp8s"]
+[ext_resource type="Texture2D" uid="uid://dgy4kpy4br3kw" path="res://Resources/Sprites/UI/Button1.png" id="3_xsn5w"]
+[ext_resource type="Texture2D" uid="uid://coq38sar8avqq" path="res://Resources/Sprites/UI/Button2.png" id="4_63e34"]
+[ext_resource type="Texture2D" uid="uid://bx5u4t761i8xp" path="res://Resources/Sprites/UI/Panel.png" id="5_soo76"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_baw1j"]
+texture = ExtResource("2_ftp8s")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_68nlo"]
+texture = ExtResource("3_xsn5w")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_js360"]
+texture = ExtResource("4_63e34")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0wcuc"]
+texture = ExtResource("5_soo76")
+
+[resource]
+Button/font_sizes/font_size = 20
+Button/fonts/font = ExtResource("1_lnclo")
+Button/styles/hover = SubResource("StyleBoxTexture_baw1j")
+Button/styles/normal = SubResource("StyleBoxTexture_68nlo")
+Button/styles/pressed = SubResource("StyleBoxTexture_js360")
+Panel/styles/panel = SubResource("StyleBoxTexture_0wcuc")

@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://cqm7gwj6xvqif"]
+
+[ext_resource type="Script" uid="uid://nhdwnr10exh4" path="res://Scripts/UI/results.gd" id="1_27imp"]
+[ext_resource type="Texture2D" uid="uid://bx5u4t761i8xp" path="res://Resources/Sprites/UI/Panel.png" id="1_njsub"]
+[ext_resource type="FontFile" uid="uid://cha5xe3qmsdug" path="res://Resources/Fonts/GrapeSoda.ttf" id="2_27imp"]
+[ext_resource type="Theme" uid="uid://jt10bmb6oedo" path="res://Resources/Themes/ParkTheme.tres" id="3_atw2m"]
+[ext_resource type="Texture2D" uid="uid://dgy4kpy4br3kw" path="res://Resources/Sprites/UI/Button1.png" id="4_bl0h1"]
+[ext_resource type="Texture2D" uid="uid://coq38sar8avqq" path="res://Resources/Sprites/UI/Button2.png" id="5_ehlin"]
+[ext_resource type="Texture2D" uid="uid://cgfrpaqy2s4ej" path="res://Resources/Sprites/UI/Button3.png" id="6_7lunb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_72gys"]
+texture = ExtResource("1_njsub")
+
+[sub_resource type="LabelSettings" id="LabelSettings_i1kmv"]
+font = ExtResource("2_27imp")
+font_size = 30
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q781c"]
+texture = ExtResource("4_bl0h1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v4wvx"]
+texture = ExtResource("5_ehlin")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rsjbs"]
+texture = ExtResource("6_7lunb")
+
+[node name="Results" type="Control" unique_id=318106998]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_27imp")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1444488146]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=120849278]
+offset_top = -1.0
+offset_right = 40.0
+offset_bottom = 39.0
+scale = Vector2(24.191736, 12.374714)
+color = Color(0, 0, 0, 0.13333334)
+
+[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer" unique_id=1245070905]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -200.0
+offset_right = 480.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Panel" type="Panel" parent="CanvasLayer/BoxContainer" unique_id=1362929876]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_72gys")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/BoxContainer/Panel" unique_id=787690573]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = -139.5
+offset_right = 69.0
+offset_bottom = 139.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="CanvasLayer/BoxContainer/Panel/VBoxContainer" unique_id=1617420815]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8868002, 0.76077175, 0.42119503, 1)
+theme_override_fonts/font = ExtResource("2_27imp")
+theme_override_font_sizes/font_size = 40
+text = "You Win!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Points" type="Label" parent="CanvasLayer/BoxContainer/Panel/VBoxContainer" unique_id=1739106947]
+layout_mode = 2
+text = "Rank:"
+label_settings = SubResource("LabelSettings_i1kmv")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/BoxContainer/Panel/VBoxContainer" unique_id=1223297858]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 2
+
+[node name="PlayAgain" type="Button" parent="CanvasLayer/BoxContainer/Panel/VBoxContainer/VBoxContainer" unique_id=599347649]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("3_atw2m")
+text = "Play Again"
+
+[node name="GoToLobby" type="Button" parent="CanvasLayer/BoxContainer/Panel/VBoxContainer/VBoxContainer" unique_id=1282968196]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_27imp")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_q781c")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_v4wvx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rsjbs")
+text = "Lobby"
+
+[connection signal="pressed" from="CanvasLayer/BoxContainer/Panel/VBoxContainer/VBoxContainer/PlayAgain" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="CanvasLayer/BoxContainer/Panel/VBoxContainer/VBoxContainer/GoToLobby" to="." method="_on_go_to_lobby_pressed"]

@@ -12,7 +12,7 @@ script = ExtResource("1_ollii")
 [node name="ServerManager" type="Node" parent="." unique_id=1872218123 node_paths=PackedStringArray("main_scene")]
 script = ExtResource("2_ialnu")
 Player = ExtResource("3_1so4l")
-main_scene = NodePath("../Room/Lobby")
+main_scene = NodePath("../Room")
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="ServerManager" unique_id=750994165]
 _spawnable_scenes = PackedStringArray("uid://ddndj5pi3flv6")
